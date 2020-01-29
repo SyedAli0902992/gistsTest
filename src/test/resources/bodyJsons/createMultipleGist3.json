@@ -1,0 +1,12 @@
+{
+  "description": "Multiple Gist 3",
+  "public": true,
+  "files": {
+    "testInsertion0.txt": {
+      "content": "Run to test Multiple Gist 3"
+    },
+    "testInsertion1.txt": {
+      "content": "Runs to test Multiple Gist 3"
+    }
+  }
+}

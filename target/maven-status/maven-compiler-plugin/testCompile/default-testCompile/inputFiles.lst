@@ -1,0 +1,9 @@
+/Users/syedsadiqali/eclipse-workspace/gists/src/test/java/github/gisttest/requests/model/RequestParameters.java
+/Users/syedsadiqali/eclipse-workspace/gists/src/test/java/github/gisttest/helper/ResponseValidatorHelper.java
+/Users/syedsadiqali/eclipse-workspace/gists/src/test/java/github/gisttest/requestmappings/RequestsMappings.java
+/Users/syedsadiqali/eclipse-workspace/gists/src/test/java/github/gisttest/helper/ReadJsonHelper.java
+/Users/syedsadiqali/eclipse-workspace/gists/src/test/java/github/gisttest/testsuite/GetGistsForOneUserTests.java
+/Users/syedsadiqali/eclipse-workspace/gists/src/test/java/github/gisttest/helper/RequestMappingHelper.java
+/Users/syedsadiqali/eclipse-workspace/gists/src/test/java/github/gisttest/validators/ResponseValidator.java
+/Users/syedsadiqali/eclipse-workspace/gists/src/test/java/github/gisttest/constants/Constants.java
+/Users/syedsadiqali/eclipse-workspace/gists/src/test/java/github/gisttest/restservices/GistsRestServicesCaller.java

@@ -1,0 +1,12 @@
+{
+    "description": "test a succefull insertion",
+    "public": true,
+    "files": {
+      "testInsertion0.txt": {
+        "content": "Run to test post test insertion"
+      },
+      "testInsertion1.txt": {
+        "content": "Runs to test post test insertion"
+      }
+    }
+  }
