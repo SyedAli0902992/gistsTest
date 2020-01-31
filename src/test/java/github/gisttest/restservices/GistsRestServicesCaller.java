@@ -42,7 +42,7 @@ public class GistsRestServicesCaller {
 
 	public Response getAllPublicGists() {
 
-		requestParameters.setRequestMapping("gists/starred");
+		requestParameters.setRequestMapping("gists/public");
 		requestParameters.setHeaders(headers);
 
 		return RequestsMappings.getRequestsResponse(requestParameters);

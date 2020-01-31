@@ -29,6 +29,14 @@ public class ResponseValidator {
 		return description.equals(expectedId);
 		}
 	
+    public static boolean validategistsOwner(Response response ,String expectedOwner)  {
+		List<?> listOfGist = response.getBody().jsonPath().get("owner");
+		HashMap<?,?> owner = (HashMap<?, ?>) listOfGist.get(0);
+
+		return owner.get("login").toString().equals(expectedOwner);
+		
+	}
+	
 	public static boolean validateStatusCode(Response response,int expectedStatusCode) {
 		int statusCode = response.getStatusCode();
 		

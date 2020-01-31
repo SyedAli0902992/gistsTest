@@ -14,7 +14,7 @@ import github.gisttest.restservices.GistsRestServicesCaller;
 import github.gisttest.validators.ResponseValidator;
 import io.restassured.response.Response;
 
-public class GetGistsForOneUserTests {
+public class GistsTests{
 
 	GistsRestServicesCaller gistsRestServicesCaller;
 	
@@ -191,6 +191,54 @@ public class GetGistsForOneUserTests {
 		responseDelete = gistsRestServicesCaller.getASingleGists(gist);
 		assertTrue(ResponseValidator.validateStatusCode(responseDelete, 404));
 		});
+		
+	}
+	
+	/*This test is validate if a gist is forked successfully 
+	 * it will insert a record and validate its contents
+	 * then use get to check if that gist Id exsists
+	 * then use delete to delete that gist using id
+	 * */
+	@Test
+	public void  testSuccesfullGistsFork() {
+		//create a gist
+		Response response = gistsRestServicesCaller.getAllPublicGists();
+		
+		String gistId = ResponseValidatorHelper.getGistIdOfFirstGistResponse(response);
+		
+		//fork a public gist gist
+	    response = gistsRestServicesCaller.forkAGists(gistId);
+		assertTrue(ResponseValidator.validateStatusCode(response, 201));
+		
+		//validate gists forked
+		response = gistsRestServicesCaller.ListGistsForks(gistId);
+		assertTrue(ResponseValidator.validateStatusCode(response, 200));
+		assertTrue(ResponseValidator.validategistsOwner(response, "SyedAli0902992"));
+		gistId = ResponseValidatorHelper.getGistIdOfFirstGistResponse(response);
+		
+		
+		//delete the gist created
+		response = gistsRestServicesCaller.deleteAGists(gistId);
+		assertTrue(ResponseValidator.validateStatusCode(response, 204));
+		
+		//validate that the gist no longer exists
+		response = gistsRestServicesCaller.getASingleGists(gistId);
+		assertTrue(ResponseValidator.validateStatusCode(response, 404));
+		
+	}
+	
+	/*This test is validate if POST is unsuccessfully when trying 
+	 * to insert a gist without any file
+	 * it will insert a record and validate its contents
+	 * then use get to check if that gist Id exsists
+	 * then use delete to delete that gist using id
+	 * */
+	@Test
+	public void  testFailureOfInsertionOnInvalidGist() {
+		//create a gist
+		Response response = gistsRestServicesCaller.createAGists(ReadJsonHelper.getParsedJsonAsString("testFailureOfInsertionOnInvalidFileName"));
+		assertTrue(ResponseValidator.validateStatusCode(response, 422));
+		
 		
 	}
 }
