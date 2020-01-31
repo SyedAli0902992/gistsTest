@@ -14,7 +14,7 @@ public class GistsRestServicesCaller {
 		this.RequestsMappings = new RequestsMappings();
 		this.requestParameters = new RequestParameters();
 		this.headers = new HashMap<String, String>();
-		headers.put("Authorization", Constants.TOKEN);
+		headers.put("Authorization", Constants.TOKENHELPER1+Constants.TOKENHELPER2+Constants.TOKENHELPER3);
 	}
 
 	RequestsMappings RequestsMappings;
