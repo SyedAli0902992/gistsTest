@@ -29,7 +29,7 @@ public class practiseCoding {
                 	subset.add(set[j]);
                 }
             }
-            System.out.println("test gits");
+            System.out.println("tests gits");
             double diff = findDiffMeanMedian(subset);
             if(diff>greatestDiff){
             	greatestDiff = diff;
