@@ -8,9 +8,9 @@ import github.gisttest.requestmappings.RequestsMappings;
 import github.gisttest.requests.model.RequestParameters;
 import io.restassured.response.Response;
 
-public class GistsRestServicesCaller {
+public class RestServices {
 
-	public GistsRestServicesCaller() {
+	public RestServices() {
 		this.RequestsMappings = new RequestsMappings();
 		this.requestParameters = new RequestParameters();
 		this.headers = new HashMap<String, String>();
